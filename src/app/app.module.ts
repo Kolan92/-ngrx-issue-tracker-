@@ -13,6 +13,9 @@ import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
 import { IssuesComponent } from './issues/issues.component';
 import { EffectsModule } from '@ngrx/effects';
+import { IssueEffects } from './store/issue/issue.effects';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DatabaseService } from './database.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([IssueEffects]),
+    InMemoryWebApiModule.forRoot(DatabaseService)
   ],
   providers: [],
   bootstrap: [AppComponent]

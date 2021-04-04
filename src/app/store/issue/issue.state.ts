@@ -13,6 +13,7 @@ export interface IssueState {
     selected: string[];
     filter: Filter;
     loaded: boolean;
+    loading: boolean;
 }
 
 export const initialState: IssueState = {
@@ -21,5 +22,6 @@ export const initialState: IssueState = {
     filter: {
         text: ''
     },
-    loaded: false
+    loaded: false,
+    loading: false
 }
