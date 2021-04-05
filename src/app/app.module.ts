@@ -16,6 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { IssueEffects } from './store/issue/issue.effects';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DatabaseService } from './database.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DatabaseService } from './database.service';
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {}),

@@ -5,4 +5,7 @@
         <small>{{ issue.priority }}</small>
     </h2>
     <p>{{ issue.description }}</p>
+    <p>Resolved {{ issue.resolved }}</p>
+
+    <button (click)="resolve(issue.id)" >Resolve {{issue.id}}</button>
 </section>

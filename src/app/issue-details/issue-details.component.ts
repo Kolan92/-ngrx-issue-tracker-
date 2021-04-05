@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Issue, RootState } from '../store';
 import { switchMap } from 'rxjs/operators';
 import * as fromIssues from "src/app/store/issue/issue.selectors";
+import * as IssueActions from 'src/app/store/issue/issue.actions';
 
 
 @Component({
@@ -23,6 +24,10 @@ export class IssueDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  resolve(issueId: string){
+    this.store.dispatch(IssueActions.resolve({issueId}));
   }
 
 }
