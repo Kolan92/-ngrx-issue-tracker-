@@ -1,7 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { initialState, Issues } from "./issue.state";
 import * as IssueActions from "./issue.actions";
-import { state } from "@angular/animations";
 
 export const issueReducer = createReducer(
     initialState,
